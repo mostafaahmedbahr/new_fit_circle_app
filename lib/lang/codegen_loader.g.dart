@@ -20,13 +20,33 @@ class CodegenLoader extends AssetLoader {
     "finish" : "النهاية",
     "skip": "تخطى",
     "search" :"البحث",
-
+    "login" : "تسجيل",
+    "transform" : "غير",
+    "yourBody" : "جسمك",
+    "yourLifeWithOurGymApp" : "حياتك مع تطبيقنا الرياضي",
+    "emailOrPhone" : "الايميل او الهاتف",
+    "validateEmailOrPhone" : "برجاء التاكد من رقم الهاتف او الايميل",
+    "password" : "كلمة السر",
+    "validatePassword" : "يرجى التحقق من كلمة السر",
+    "forgetPassword" : "نسيت كلمة المرور",
+    "doNotHaveAnAccount" : "ليس لديك حساب ؟",
+    "register" : "سجل الان",
   };
   static const Map<String, dynamic> en = {
+    "register" : "Register",
+    "forgetPassword" : "Forget Password",
+    "doNotHaveAnAccount" : "Don’t have an account ?",
+    "password" : "Password",
+    "emailOrPhone" : "Email OR Phone",
+    "validateEmailOrPhone" : "Please verify your phone number or email",
+    "validatePassword" : "Please verify your Password" ,
+    "yourLifeWithOurGymApp" : "Your Life With Our Gym App",
+    "transform" : "Transform",
+    "yourBody" : "Your Body",
     "start" : "Start",
     "next" : "Next",
     "finish" : "Finish",
-    "" : "" ,
+    "login" : "Login" ,
 
   };
   static const Map<String, Map<String, dynamic>> mapLocales = {

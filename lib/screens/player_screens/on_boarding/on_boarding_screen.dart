@@ -6,6 +6,7 @@ import '../../../core/colors.dart';
 import '../../../dio/sh/sh.dart';
 import '../../../models/player_models/on_boarding_model.dart';
 import '../../../widgets/custom_button.dart';
+import '../auth/login/login_screen.dart';
 import 'on_boarding_cubit/on_boarding_cubit.dart';
 import 'on_boarding_cubit/on_boarding_states.dart';
 
@@ -204,11 +205,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 SharedPreferencesHelper.saveData(key: 'isBoarding', value: true)
                     .then((value) {
                   if (value) {
-                    // Navigator.pushAndRemoveUntil(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) => const StartScreen()),
-                    //         (route) => false);
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const PlayerLoginScreen()),
+                            (route) => false);
                   }
                 });
               } else {

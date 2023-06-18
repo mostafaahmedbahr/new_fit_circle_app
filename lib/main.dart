@@ -4,6 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:new_fit_circle_last_ui/dio/sh/sh.dart';
+import 'package:new_fit_circle_last_ui/screens/player_screens/auth/login/login_screen.dart';
 import 'package:new_fit_circle_last_ui/screens/player_screens/on_boarding/on_boarding_cubit/on_boarding_cubit.dart';
 import 'package:new_fit_circle_last_ui/screens/player_screens/on_boarding/on_boarding_screen.dart';
 import 'package:new_fit_circle_last_ui/shared/bloc_observer.dart';
@@ -46,13 +47,16 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => OnBoardingCubit()),
       ],
       child: MaterialApp(
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
         title: 'Fit Circle',
         theme: ThemeData(
           primarySwatch: Colors.blue,
           fontFamily: 'Roboto',
         ),
         debugShowCheckedModeBanner: false,
-        home: const OnBoardingScreen(),
+        home: const PlayerLoginScreen(),
         builder: (context, child) => ResponsiveWrapper.builder(
           BouncingScrollWrapper.builder(context, child!),
           maxWidth: 1200,
