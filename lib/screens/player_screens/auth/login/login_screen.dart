@@ -5,6 +5,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
  import 'package:new_fit_circle_last_ui/lang/locale_keys.dart';
+import 'package:new_fit_circle_last_ui/screens/player_screens/layout_player/cubit/cubit.dart';
+import 'package:new_fit_circle_last_ui/screens/player_screens/layout_player/layout_player.dart';
 import '../../../../core/colors.dart';
 import '../../../../core/utils/nav.dart';
 import '../../../../widgets/custom_button.dart';
@@ -266,7 +268,13 @@ class PlayerLoginScreen extends StatelessWidget {
                                       style: const TextStyle(
                                         fontSize: 20,
                                       ),),
-                                    onPressed: (){},
+                                    onPressed: (){
+                                      AppNav.customNavigator(
+                                          context: context,
+                                          screen: const PlayerLayoutScreen(),
+                                          finish: true,
+                                      );
+                                    },
                                   );
                                 },
                                 fallback: (context)=>const Center(

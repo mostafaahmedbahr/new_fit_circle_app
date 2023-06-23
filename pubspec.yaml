@@ -64,6 +64,7 @@ dependencies:
   flutter_html:
   html_editor_enhanced: ^2.5.1
   easy_localization: ^3.0.1
+  persistent_bottom_nav_bar: ^5.0.2
 
 dev_dependencies:
   flutter_test:

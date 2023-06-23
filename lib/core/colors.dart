@@ -11,5 +11,6 @@ class AppColors2 {
   static const Color second2Color = Color(0xff102835);
   static const Color whiteColor = Color(0xffFFFFFF);
   static const Color buttonColor = Color(0xff40B9EB);
+  static const Color yellowColor = Color(0xffF7CB15);
 
 }
