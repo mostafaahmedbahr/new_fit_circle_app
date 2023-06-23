@@ -30,7 +30,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         var cubit = OnBoardingCubit.get(context);
         return SafeArea(
           child: Scaffold(
-            backgroundColor: AppColors.blackColor,
+            backgroundColor: AppColors2.blackColor,
             // appBar: AppBar(
             //   backgroundColor: Colors.white,
             //   elevation: 0.0,
@@ -173,7 +173,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               model.head!,
               style: const TextStyle(
                 fontSize: 24.0,
-                color: AppColors.whiteColor,
+                color: AppColors2.whiteColor,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -187,15 +187,15 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               dotWidth: 20,
               expansionFactor: 4.0,
               dotHeight: 16.0,
-              dotColor: AppColors.whiteColor,
-              activeDotColor: AppColors.mainColor,
+              dotColor: AppColors2.whiteColor,
+              activeDotColor: AppColors2.mainColor,
             ),
           ),
           const CustomSizedBox(height: 60,),
           CustomButton(
             width: double.infinity,
             height: 60,
-            btnColor: AppColors.mainColor,
+            btnColor: AppColors2.mainColor,
             btnText:  Text(model.buttonText,
               style: const TextStyle(
                 fontSize: 20,

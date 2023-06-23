@@ -11,10 +11,23 @@ abstract class LocaleKeys {
   static const emailOrPhone = "emailOrPhone";
   static const validateEmailOrPhone = "validateEmailOrPhone";
   static const password = "password";
+  static const confirmPassword = "confirmPassword";
   static const validatePassword = "validatePassword";
   static const forgetPassword = "forgetPassword";
   static const doNotHaveAnAccount = "doNotHaveAnAccount";
   static const register = "register";
-  // static const login = "login";
+  static const joinUs = "joinUs";
+  static const name = "name";
+static const phoneNumber = "phoneNumber";
+static const country = "country";
+static const gender = "gender";
+static const birthDate = "birthDate";
+// static const login = "login";
+// static const login = "login";
+// static const login = "login";
+// static const login = "login";
+// static const login = "login";
+// static const login = "login";
+
 
 }

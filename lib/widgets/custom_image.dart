@@ -63,7 +63,7 @@ class CustomImage extends StatelessWidget {
           ? CachedNetworkImage(
         imageUrl: image,
         placeholder: (context, url) =>  const SpinKitRipple(
-          color: AppColors.blackColor,
+          color: AppColors2.blackColor,
           size: 50.0,
         ),
         errorWidget: (context, url, error) => const BlankImageWidget(),
@@ -74,7 +74,7 @@ class CustomImage extends StatelessWidget {
           ),
         ),
       )
-          : Image(image: AssetImage(image,), fit: fit,color: AppColors.mainColor),
+          : Image(image: AssetImage(image,), fit: fit,color: AppColors2.mainColor),
     );
   }
 }

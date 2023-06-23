@@ -18,7 +18,7 @@ class ProfileItemForUser extends StatelessWidget {
             Text(label,
               style: TextStyle(
                 fontSize: 21,
-                color: AppColors.buttonColor,
+                color: AppColors2.buttonColor,
               ),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
@@ -28,7 +28,7 @@ class ProfileItemForUser extends StatelessWidget {
               child: Text(  subLabel,
                 style: TextStyle(
                   fontSize: 21,
-                  color: AppColors.blackColor,
+                  color: AppColors2.blackColor,
                 ),
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
@@ -38,7 +38,7 @@ class ProfileItemForUser extends StatelessWidget {
             Container(
               height: 1,
               width: MediaQuery.of(context).size.width*0.4,
-              color: AppColors.grey1Color,
+              color: AppColors2.grey1Color,
             ),
           ],
         ),

@@ -4,12 +4,13 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:new_fit_circle_last_ui/core/utils/nav.dart';
-import 'package:new_fit_circle_last_ui/lang/locale_keys.dart';
+ import 'package:new_fit_circle_last_ui/lang/locale_keys.dart';
 import '../../../../core/colors.dart';
+import '../../../../core/utils/nav.dart';
 import '../../../../widgets/custom_button.dart';
 import '../../../../widgets/custom_sized_box.dart';
 import '../../../../widgets/custom_text.dart';
+import '../register/register_screen.dart';
 import 'login_cubit/cubit.dart';
 import 'login_cubit/states.dart';
 
@@ -96,9 +97,10 @@ class PlayerLoginScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Image.asset("assets/images/logo2.png",
+                              Image.asset("assets/images/Group.png",
                                 width: 150,
                                 height: 120,
+                                color: AppColors2.mainColor,
                               ),
                               const CustomSizedBox(
                                 height: 50,
@@ -109,16 +111,16 @@ class PlayerLoginScreen extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(LocaleKeys.transform.tr(),style: const TextStyle(
-                                      color: AppColors.mainColor,
+                                      color: AppColors2.mainColor,
                                       fontSize: 20,
                                       fontWeight: FontWeight.w500,
                                     ),),
                                     Text(LocaleKeys.yourBody.tr(),style: const TextStyle(
-                                      color: AppColors.blackColor,
+                                      color: AppColors2.blackColor,
                                       fontSize: 20,
                                     ),),
                                     Text(" , ${LocaleKeys.transform.tr()}",style: const TextStyle(
-                                      color: AppColors.mainColor,
+                                      color: AppColors2.mainColor,
                                       fontSize: 20,
                                       fontWeight: FontWeight.w500,
                                     ),),
@@ -126,7 +128,7 @@ class PlayerLoginScreen extends StatelessWidget {
                                 ),
                               ),
                               Text(LocaleKeys.yourLifeWithOurGymApp.tr(),style: const TextStyle(
-                                color: AppColors.blackColor,
+                                color: AppColors2.blackColor,
                                 fontSize: 20,
                               ),),
                               const CustomSizedBox(
@@ -136,7 +138,7 @@ class PlayerLoginScreen extends StatelessWidget {
                                 alignment: Alignment.topLeft,
                                 child: CustomText(
                                     text: LocaleKeys.emailOrPhone.tr(),
-                                textColor: AppColors.blackColor,
+                                textColor: AppColors2.blackColor,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 16,
                                 ),
@@ -163,18 +165,18 @@ class PlayerLoginScreen extends StatelessWidget {
                                   enabledBorder:     OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10),
                                       borderSide: const BorderSide(
-                                        color: AppColors.grey2Color,
+                                        color: AppColors2.grey2Color,
                                       )
                                   ),
                                   focusedBorder:   OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                       borderSide: const BorderSide(
-                                        color: AppColors.mainColor,
+                                        color: AppColors2.mainColor,
                                       )
                                   ),
                                   hintText: LocaleKeys.emailOrPhone.tr(),
                                   hintStyle: const TextStyle(
-                                    color: AppColors.grey2Color,
+                                    color: AppColors2.grey2Color,
                                   ),
                                 ),
                               ),
@@ -185,7 +187,7 @@ class PlayerLoginScreen extends StatelessWidget {
                                 alignment: Alignment.topLeft,
                                 child: CustomText(
                                   text: LocaleKeys.password.tr(),
-                                  textColor: AppColors.blackColor,
+                                  textColor: AppColors2.blackColor,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 16,
                                 ),
@@ -217,17 +219,17 @@ class PlayerLoginScreen extends StatelessWidget {
                                   border:const OutlineInputBorder(),
                                   enabledBorder:const OutlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: AppColors.grey2Color,
+                                        color: AppColors2.grey2Color,
                                       )
                                   ),
                                   focusedBorder: const OutlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: AppColors.mainColor,
+                                        color: AppColors2.mainColor,
                                       )
                                   ),
                                   hintText: LocaleKeys.password.tr(),
                                   hintStyle: const TextStyle(
-                                    color: AppColors.grey2Color,
+                                    color: AppColors2.grey2Color,
                                   ),
                                   suffixIcon: IconButton(
                                     color: Colors.black,
@@ -245,7 +247,7 @@ class PlayerLoginScreen extends StatelessWidget {
                                 alignment: Alignment.topLeft,
                                 child: CustomText(
                                   text: LocaleKeys.forgetPassword.tr(),
-                                  textColor: AppColors.grey2Color,
+                                  textColor: AppColors2.grey2Color,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14,
                                 ),
@@ -259,7 +261,7 @@ class PlayerLoginScreen extends StatelessWidget {
                                   return CustomButton(
                                     width: double.infinity,
                                     height: 60,
-                                    btnColor: AppColors.mainColor,
+                                    btnColor: AppColors2.mainColor,
                                     btnText:  Text(LocaleKeys.login.tr(),
                                       style: const TextStyle(
                                         fontSize: 20,
@@ -268,7 +270,7 @@ class PlayerLoginScreen extends StatelessWidget {
                                   );
                                 },
                                 fallback: (context)=>const Center(
-                                  child: CircularProgressIndicator(color: AppColors.mainColor,),
+                                  child: CircularProgressIndicator(color: AppColors2.mainColor,),
                                 ),
                               ),
                               const CustomSizedBox(
@@ -278,20 +280,20 @@ class PlayerLoginScreen extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                    CustomText(text: LocaleKeys.doNotHaveAnAccount.tr(),
-                                    textColor: AppColors.blackColor,
+                                    textColor: AppColors2.blackColor,
                                      fontSize: 14,
                                      fontWeight: FontWeight.w400,
                                   ),
                                   TextButton(
                                     onPressed: (){
-                                      // AppNav.customNavigator(
-                                      //     context: context,
-                                      //     screen: PlayerRegisterScreen(),
-                                      //     finish: false,
-                                      // );
+                                      AppNav.customNavigator(
+                                          context: context,
+                                          screen: const PlayerRegisterScreen(),
+                                          finish: false,
+                                      );
                                     },
                                     child:  CustomText(text:LocaleKeys.register.tr(),
-                                      textColor: AppColors.mainColor,
+                                      textColor: AppColors2.mainColor,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20,
                                     ),
