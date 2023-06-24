@@ -33,6 +33,9 @@ static const viewAll = "viewAll";
 static const all = "all";
 static const album = "album";
 static const review = "review";
+static const courses = "courses";
+static const price = "price";
+static const duration = "duration";
 
 
 // static const login = "login";

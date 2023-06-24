@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:new_fit_circle_last_ui/core/colors.dart';
+import 'package:new_fit_circle_last_ui/core/utils/nav.dart';
 import 'package:new_fit_circle_last_ui/lang/locale_keys.dart';
 import 'package:new_fit_circle_last_ui/screens/player_screens/coash_details/cubit/cubit.dart';
 import 'package:new_fit_circle_last_ui/screens/player_screens/coash_details/cubit/states.dart';
@@ -16,6 +17,7 @@ import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 
 import '../articles_details/articles_details_screen.dart';
 import '../coashes_for_player/coashes_for_player_screen.dart';
+import '../courses_for_player/courses_for_player_screen.dart';
 
 class CoashDetailsScreen extends StatelessWidget {
   const CoashDetailsScreen({Key? key}) : super(key: key);
@@ -490,14 +492,23 @@ class CoashDetailsScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Container(
-                    height: 60,
-                    width: double.infinity,
-                    color: AppColors2.yellow2Color,
-                    child: const Center(
-                      child: CustomText(text: "Courses",
-                      textColor: AppColors2.whiteColor,
-                      fontSize: 25,
+                  InkWell(
+                    onTap: (){
+                      AppNav.customNavigator(
+                          context: context,
+                          screen: const CoursesForPlayerScreen(),
+                          finish: false,
+                      );
+                    },
+                    child: Container(
+                      height: 60,
+                      width: double.infinity,
+                      color: AppColors2.yellow2Color,
+                      child: const Center(
+                        child: CustomText(text: "Courses",
+                        textColor: AppColors2.whiteColor,
+                        fontSize: 25,
+                        ),
                       ),
                     ),
                   ),
