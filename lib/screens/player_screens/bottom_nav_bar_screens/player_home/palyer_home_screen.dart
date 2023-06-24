@@ -12,6 +12,7 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../core/utils/nav.dart';
+import '../../articles_details/articles_details_screen.dart';
 import '../../coashes_for_player/coashes_for_player_screen.dart';
 import 'cubit/cubit.dart';
  import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -136,7 +137,7 @@ class PlayerHomeScreen extends StatelessWidget {
                                   ),
                                 ),
                                   Text(LocaleKeys.viewAll.tr(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontWeight: FontWeight.bold
                                   ),),
                               ],
@@ -188,116 +189,126 @@ class PlayerHomeScreen extends StatelessWidget {
                   child: ListView.separated(
                     scrollDirection: Axis.horizontal,
                       itemBuilder:  (context,index){
-                        return Container(
-                          height: 150,
-                          width: MediaQuery.sizeOf(context).width*0.8,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child:Stack(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(10),
-                                child: Image.asset("assets/images/bg 1.png",
-                                fit: BoxFit.cover,
-                                  width: MediaQuery.sizeOf(context).width*0.8,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-                                child: SizedBox(
-                                  height: 35,
-                                  child: ListView.separated(
-                                    scrollDirection: Axis.horizontal,
-                                      itemBuilder: (context,index){
-                                        return Container(
-                                          padding: const EdgeInsets.all(10),
-                                          height: 35,
-                                          width: 70,
-                                          decoration:   BoxDecoration(
-                                            color: AppColors2.mainColor,
-                                            borderRadius: BorderRadius.circular(50),
-                                          ),
-                                          child: const Center(
-                                            child: CustomText(
-                                              text: "Food",
-                                              textColor: AppColors2.whiteColor,
-                                            ),
-                                          ),
-                                        );
-                                      },
-                                      separatorBuilder: (context,index){
-                                        return const SizedBox(width: 10,);
-                                      },
-                                      itemCount: 3,
+                        return InkWell(
+                          onTap: (){
+                            PersistentNavBarNavigator.pushNewScreen(
+                              context,
+                              screen: const ArticlesDetailsScreen(),
+                              withNavBar: false, // OPTIONAL VALUE. True by default.
+                              pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                            );
+                          },
+                          child: Container(
+                            height: 150,
+                            width: MediaQuery.sizeOf(context).width*0.8,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child:Stack(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image.asset("assets/images/bg 1.png",
+                                  fit: BoxFit.cover,
+                                    width: MediaQuery.sizeOf(context).width*0.8,
                                   ),
                                 ),
-                              ),
-                              const Center(
-                                   child: Row(
-                                   children: [
-                                     Expanded(
-                                       child: Text("The Role of Nutrition in Achieving YourGym Goals.",
-                                         style: TextStyle(
-                                           fontSize: 16,
-                                           color: AppColors2.whiteColor
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                                  child: SizedBox(
+                                    height: 35,
+                                    child: ListView.separated(
+                                      scrollDirection: Axis.horizontal,
+                                        itemBuilder: (context,index){
+                                          return Container(
+                                            padding: const EdgeInsets.all(10),
+                                            height: 35,
+                                            width: 70,
+                                            decoration:   BoxDecoration(
+                                              color: AppColors2.mainColor,
+                                              borderRadius: BorderRadius.circular(50),
+                                            ),
+                                            child: const Center(
+                                              child: CustomText(
+                                                text: "Food",
+                                                textColor: AppColors2.whiteColor,
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                        separatorBuilder: (context,index){
+                                          return const SizedBox(width: 10,);
+                                        },
+                                        itemCount: 3,
+                                    ),
+                                  ),
+                                ),
+                                const Center(
+                                     child: Row(
+                                     children: [
+                                       Expanded(
+                                         child: Text("The Role of Nutrition in Achieving YourGym Goals.",
+                                           style: TextStyle(
+                                             fontSize: 16,
+                                             color: AppColors2.whiteColor
+                                           ),
+                                           maxLines: 2,
+                                           overflow: TextOverflow.ellipsis,
                                          ),
-                                         maxLines: 2,
-                                         overflow: TextOverflow.ellipsis,
                                        ),
-                                     ),
-                                   ],
-                               ),
+                                     ],
                                  ),
-                              const Positioned(
-                                bottom: 10,
-                                left: 10,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                        Row(
-                                          children: [
-                                            Icon(Icons.calendar_month),
-                                            CustomSizedBox(width: 5,),
-                                            Text("24/6/2023",
-                                              style: TextStyle(
-                                                fontSize: 14,
+                                   ),
+                                const Positioned(
+                                  bottom: 10,
+                                  left: 10,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                          Row(
+                                            children: [
+                                              Icon(Icons.calendar_month),
+                                              CustomSizedBox(width: 5,),
+                                              Text("24/6/2023",
+                                                style: TextStyle(
+                                                  fontSize: 14,
 
-                                              ),),
-                                          ],
-                                        ),
-                                        CustomSizedBox(width: 10,),
-                                        CircleAvatar(radius: 3,
-                                          backgroundColor: AppColors2.whiteColor,
-                                        ),
-                                        CustomSizedBox(width: 10,),
-                                        Row(
-                                          children: [
-                                            Text("5"),
-                                            Icon(Icons.star,
-                                              color: AppColors2.yellowColor,)
-                                          ],
-                                        ),
-                                  ],
+                                                ),),
+                                            ],
+                                          ),
+                                          CustomSizedBox(width: 10,),
+                                          CircleAvatar(radius: 3,
+                                            backgroundColor: AppColors2.whiteColor,
+                                          ),
+                                          CustomSizedBox(width: 10,),
+                                          Row(
+                                            children: [
+                                              Text("5"),
+                                              Icon(Icons.star,
+                                                color: AppColors2.yellowColor,)
+                                            ],
+                                          ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Positioned(
-                                bottom: 10,
-                                right: 10,
-                                child: Container(
-                                height: 30,
-                                width: 30,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                ),
-                                child: Image.asset("assets/images/profile.png",
+                                Positioned(
+                                  bottom: 10,
+                                  right: 10,
+                                  child: Container(
                                   height: 30,
                                   width: 30,
-                                  fit: BoxFit.cover,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(100),
+                                  ),
+                                  child: Image.asset("assets/images/profile.png",
+                                    height: 30,
+                                    width: 30,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
-                              ),
-                              ),
-                            ],
+                                ),
+                              ],
+                            ),
                           ),
                         );
                       },
