@@ -3,10 +3,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:new_fit_circle_last_ui/core/colors.dart';
+import 'package:new_fit_circle_last_ui/core/utils/nav.dart';
 import 'package:new_fit_circle_last_ui/lang/locale_keys.dart';
 import 'package:new_fit_circle_last_ui/widgets/custom_sized_box.dart';
 import 'package:new_fit_circle_last_ui/widgets/custom_text.dart';
 import 'package:custom_rating_bar/custom_rating_bar.dart';
+
+import '../coash_details/coash_details_screen.dart';
 
 class CoashesForPlayerScreen extends StatelessWidget {
   const CoashesForPlayerScreen({Key? key}) : super(key: key);
@@ -98,69 +101,78 @@ class CoashesForPlayerScreen extends StatelessWidget {
               Expanded(
                 child: ListView.separated(
                     itemBuilder: (context,index){
-                      return SizedBox(
-                        height: 100,
-                        width: double.infinity,
-                        child: Row(
-                          children: [
-                            Image.asset("assets/images/Frame 1000003439.png",
-                              height: 100,
-                              width: 100,
-                              fit: BoxFit.cover,
-                            ),
-                            const CustomSizedBox(width: 20,),
-                            Expanded(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                      return InkWell(
+                        onTap: (){
+                          AppNav.customNavigator(
+                              context: context,
+                              screen: const CoashDetailsScreen(),
+                              finish: false,
+                          );
+                        },
+                        child: SizedBox(
+                          height: 100,
+                          width: double.infinity,
+                          child: Row(
+                            children: [
+                              Image.asset("assets/images/Frame 1000003439.png",
+                                height: 100,
+                                width: 100,
+                                fit: BoxFit.cover,
+                              ),
+                              const CustomSizedBox(width: 20,),
+                              Expanded(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const  Text("mostafa bahr",
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis ,
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                      ),),
+                                    const Text("ID : 190179"),
+                                    Row(
+                                      children: [
+                                        RatingBar(
+                                          filledIcon: Icons.star,
+                                          emptyIcon: Icons.star_border,
+                                          size: 20,
+                                          onRatingChanged: (value) => debugPrint('$value'),
+                                          initialRating: 3,
+                                          maxRating: 5,
+                                        ),
+                                        const CustomSizedBox(width: 10,),
+                                        const CustomText(text: "( 7 )"),
+                                      ],
+                                    ),
+                                    Container(
+                                      height: 25,
+                                      width: 70,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        color: AppColors2.yellow2Color,
+                                      ),
+                                      child: const Center(
+                                        child: CustomText(
+                                          text: "Sport",
+                                          textColor: AppColors2.whiteColor,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Stack(
+                                alignment: Alignment.center,
                                 children: [
-                                  const  Text("mostafa bahr",
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis ,
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                    ),),
-                                  const Text("ID : 190179"),
-                                  Row(
-                                    children: [
-                                      RatingBar(
-                                        filledIcon: Icons.star,
-                                        emptyIcon: Icons.star_border,
-                                        size: 20,
-                                        onRatingChanged: (value) => debugPrint('$value'),
-                                        initialRating: 3,
-                                        maxRating: 5,
-                                      ),
-                                      const CustomSizedBox(width: 10,),
-                                      const CustomText(text: "( 7 )"),
-                                    ],
-                                  ),
-                                  Container(
-                                    height: 25,
-                                    width: 70,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                      color: AppColors2.yellow2Color,
-                                    ),
-                                    child: const Center(
-                                      child: CustomText(
-                                        text: "Sport",
-                                        textColor: AppColors2.whiteColor,
-                                      ),
-                                    ),
-                                  ),
+                                  SvgPicture.asset("assets/images/Vector.svg"),
+                                  const CustomText(text: "5"),
                                 ],
                               ),
-                            ),
-                            Stack(
-                              alignment: Alignment.center,
-                              children: [
-                                SvgPicture.asset("assets/images/Vector.svg"),
-                                const CustomText(text: "5"),
-                              ],
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       );
                     },

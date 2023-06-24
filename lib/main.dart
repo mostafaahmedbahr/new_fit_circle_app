@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Roboto',
         ),
         debugShowCheckedModeBanner: false,
-        home: const PlayerLoginScreen(),
+        home: const OnBoardingScreen(),
         builder: (context, child) => ResponsiveWrapper.builder(
           BouncingScrollWrapper.builder(context, child!),
           maxWidth: 1200,

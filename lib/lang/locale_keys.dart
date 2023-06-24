@@ -27,9 +27,12 @@ static const exercises = "exercises";
 static const profile = "profile";
 static const chats = "chats";
 static const recentArticles = "recentArticles";
+static const articles = "articles";
 static const coashes = "coashes";
 static const viewAll = "viewAll";
 static const all = "all";
+static const album = "album";
+static const review = "review";
 
 
 // static const login = "login";
