@@ -8,9 +8,11 @@ import 'package:new_fit_circle_last_ui/lang/locale_keys.dart';
 import 'package:new_fit_circle_last_ui/screens/player_screens/bottom_nav_bar_screens/player_home/cubit/states.dart';
 import 'package:new_fit_circle_last_ui/widgets/custom_sized_box.dart';
 import 'package:new_fit_circle_last_ui/widgets/custom_text.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../core/utils/nav.dart';
+import '../../coashes_for_player/coashes_for_player_screen.dart';
 import 'cubit/cubit.dart';
  import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -108,7 +110,14 @@ class PlayerHomeScreen extends StatelessWidget {
                           height: 130,
                           width: 90,
                           child: InkWell(
-                            onTap: (){},
+                            onTap: (){
+                              PersistentNavBarNavigator.pushNewScreen(
+                                context,
+                                screen: const CoashesForPlayerScreen(),
+                                withNavBar: false, // OPTIONAL VALUE. True by default.
+                                pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                              );
+                            },
                             child: Column(
                               children: [
                                 Container(

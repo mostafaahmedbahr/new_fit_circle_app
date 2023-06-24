@@ -29,6 +29,9 @@ static const chats = "chats";
 static const recentArticles = "recentArticles";
 static const coashes = "coashes";
 static const viewAll = "viewAll";
+static const all = "all";
+
+
 // static const login = "login";
 // static const login = "login";
 // static const login = "login";

@@ -45,9 +45,11 @@ class CodegenLoader extends AssetLoader {
     "recentArticles" : "احدث المقالات",
     "coashes" : "المدربين",
     "viewAll" : "مشاهدة الكل",
+    "all" : "الكل",
   };
   static const Map<String, dynamic> en = {
     "name" : "Name",
+    "all" : "All",
     "viewAll" : "View All",
     "coashes" : "Coashes",
     "recentArticles" : "Recent Articles",
