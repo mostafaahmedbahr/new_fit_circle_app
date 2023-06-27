@@ -36,6 +36,7 @@ static const review = "review";
 static const courses = "courses";
 static const price = "price";
 static const duration = "duration";
+static const notification = "notification";
 
 
 // static const login = "login";

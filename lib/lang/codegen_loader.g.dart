@@ -52,9 +52,11 @@ class CodegenLoader extends AssetLoader {
     "courses" : "الكورسات",
     "price" : "السعر",
     "duration" : "المدة",
+    "notification" : "الاشعارات",
   };
   static const Map<String, dynamic> en = {
     "name" : "Name",
+    "notification" : "Notification",
     "duration" : "Duration",
     "price" : "Price",
     "courses" : "Courses",
