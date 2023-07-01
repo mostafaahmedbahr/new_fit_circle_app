@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:new_fit_circle_last_ui/dio/sh/sh.dart';
 import 'package:new_fit_circle_last_ui/screens/player_screens/auth/login/login_screen.dart';
+import 'package:new_fit_circle_last_ui/screens/player_screens/join_to_course/cubit/cubit.dart';
+import 'package:new_fit_circle_last_ui/screens/player_screens/join_to_course/general_question_screen1.dart';
+import 'package:new_fit_circle_last_ui/screens/player_screens/layout_player/layout_player.dart';
 import 'package:new_fit_circle_last_ui/screens/player_screens/notification/notification_screen.dart';
 import 'package:new_fit_circle_last_ui/screens/player_screens/on_boarding/on_boarding_cubit/on_boarding_cubit.dart';
 import 'package:new_fit_circle_last_ui/screens/player_screens/on_boarding/on_boarding_screen.dart';
@@ -23,18 +26,18 @@ void main() async {
   DioHelper.init();
   Bloc.observer = MyBlocObserver();
   runApp(
-      EasyLocalization(
-          supportedLocales: const [
-            Locale('en',""),
-            Locale('ar',""),
-          ],
-          path: 'assets/lang',
-          saveLocale: true,// <-- change the path of the translation files
-          fallbackLocale: const Locale('en',""),
-          useOnlyLangCode: true,
-          assetLoader: const CodegenLoader(),
-          child:  const MyApp()
-      ),
+    EasyLocalization(
+        supportedLocales: const [
+          Locale('en',""),
+          Locale('ar',""),
+        ],
+        path: 'assets/lang',
+        saveLocale: true,// <-- change the path of the translation files
+        fallbackLocale: const Locale('en',""),
+        useOnlyLangCode: true,
+        assetLoader: const CodegenLoader(),
+        child:  const MyApp()
+    ),
   );
 }
 
@@ -46,6 +49,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => OnBoardingCubit()),
+        BlocProvider(create: (context) => JoinToCourseCubit()),
       ],
       child: MaterialApp(
         localizationsDelegates: context.localizationDelegates,
@@ -57,7 +61,7 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Roboto',
         ),
         debugShowCheckedModeBanner: false,
-        home: const NotificationScreen(),
+        home: const GeneralQuestionScreen1(),
         builder: (context, child) => ResponsiveWrapper.builder(
           BouncingScrollWrapper.builder(context, child!),
           maxWidth: 1200,

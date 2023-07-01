@@ -37,6 +37,26 @@ static const courses = "courses";
 static const price = "price";
 static const duration = "duration";
 static const notification = "notification";
+static const messages = "messages";
+static const generalQuestions  = "generalQuestions";
+static const theseInformationWillHelpTheCoachToPersonalizeYourCourse  = "theseInformationWillHelpTheCoachToPersonalizeYourCourse";
+static const female  = "female";
+static const male  = "male";
+static const age  = "age";
+static const year  = "year";
+static const day  = "day";
+static const month  = "month";
+static const yourHeight  = "yourHeight";
+static const yourWeight  = "yourWeight";
+static const youCanChangeOrUpdateItLater  = "youCanChangeOrUpdateItLater";
+static const yourGoalAndActivity  = "yourGoalAndActivity";
+static const select  = "select";
+static const selectYourGoal  = "selectYourGoal";
+static const selectYourActivity  = "selectYourActivity";
+static const submit  = "submit";
+static const caloriesDay  = "caloriesDay";
+static const upload  = "upload";
+
 
 
 // static const login = "login";
